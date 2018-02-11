@@ -40,3 +40,33 @@ char* decipher_vigenere(char* text, char* key){
     }
     return text;
 }
+
+char* cipher_vigenere(char* text, char* key){
+    int sizekey, sizetext, i, j, newposition;
+    sizekey=strlen(key)-1;
+    sizetext=strlen(text)-1;
+    int differences[sizekey];
+
+    for(i=0;i<sizekey;i++){
+        for(j=0;j<26;j++){
+            if(letters[j]==key[i]){
+                differences[i]=j;
+                break;
+            }
+        }
+    }
+
+    for(i=0;i<sizetext;i++){
+        for(j=0;j<26;j++){
+            if(text[i]==letters[j]){
+
+                //i%sizekey because the text is longer than the key.
+                //%26 because there are 26 letters in the alphabet.
+                newposition=(j+differences[i%sizekey])%26;
+                text[i]=letters[newposition];
+                break;
+            }
+        }
+    }
+    return text;
+}
