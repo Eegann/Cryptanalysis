@@ -18,14 +18,15 @@ void main(){
     printf("Insert the text (1000 char max)\n:");
     fgets(text, 1000, stdin);
 
-    printf("Insert the key (20 char max)\n:");
+    printf("Insert the key (20 char max, must be an integer if using Caesar algorithm)\n:");
     fgets(key, 20, stdin);
 
     //Asking for which algorithm to use.
-    printf("Chose an algorithm: Vigenere v\n");
+    printf("Chose an algorithm: Caesar c, Vigenere v\n");
     fflush(stdin);
     scanf("%c", &choice);
 
+    //Asking for an action.
     printf("Chose an action: encrypt e, decipher d\n");
     fflush(stdin);
     scanf("%c", &action);
@@ -38,8 +39,11 @@ void main(){
                 case 'v':
                     printf("%s", cipher_vigenere(text,key));
                     break;
+                case 'c':
+                    printf("%s", cipher_caesar(text, atoi(key)));
+                    break;
                 default:
-                    printf("Choice doesn't exists\n");
+                    printf("Algorithm doesn't exists\n");
             }
             break;
 
@@ -48,17 +52,18 @@ void main(){
                 case 'v':
                     printf("%s", decipher_vigenere(text, key));
                     break;
+                case 'c':
+                    printf("%s", decipher_caesar(text, atoi(key)));
+                    break;
                 default:
-                    printf("Choice doesn't exists\n");
+                    printf("Algorithm doesn't exists\n");
             }
             break;
 
         default:
-            printf("Choice doesn't exist\n");
+            printf("Action doesn't exist\n");
     }
-
-
-
+    //Free the allocated memory.
     free(text);
     free(key);
 }
