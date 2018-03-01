@@ -22,7 +22,7 @@ void main(){
     fgets(key, 20, stdin);
 
     //Asking for which algorithm to use.
-    printf("Chose an algorithm: Caesar c, Vigenere v\n");
+    printf("Chose an algorithm: Caesar c, Vigenere v, Self-encryption s\n");
     fflush(stdin);
     scanf("%c", &choice);
 
@@ -42,6 +42,9 @@ void main(){
                 case 'c':
                     printf("%s", cipher_caesar(text, atoi(key)));
                     break;
+                case 's':
+                    printf("%s", cipher_self_encryption(text, key));
+                    break;
                 default:
                     printf("Algorithm doesn't exists\n");
             }
@@ -54,6 +57,9 @@ void main(){
                     break;
                 case 'c':
                     printf("%s", decipher_caesar(text, atoi(key)));
+                    break;
+                case 's':
+                    printf("%s", cipher_self_encryption(text, key));
                     break;
                 default:
                     printf("Algorithm doesn't exists\n");

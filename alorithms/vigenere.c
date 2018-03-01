@@ -9,13 +9,14 @@
 //=> eygmqne
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include "../includes/variables.h"
 
 
 char* decipher_vigenere(char* text, char* key){
     int keysize, textsize, i, j, newposition;
+
+    //-1 because the last char is \0
     keysize=strlen(key)-1;
     textsize=strlen(text)-1;
     int differences[keysize];
@@ -47,6 +48,8 @@ char* decipher_vigenere(char* text, char* key){
 
 char* cipher_vigenere(char* text, char* key){
     int keysize, textsize, i, j, newposition;
+
+    //-1 because the last char is \0
     keysize=strlen(key)-1;
     textsize=strlen(text)-1;
     int differences[keysize];

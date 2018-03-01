@@ -5,7 +5,6 @@
 //Each letters of the text are shifted to the right by the amount of the key.
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include "../includes/variables.h"
 
