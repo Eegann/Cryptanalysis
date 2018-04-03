@@ -22,7 +22,7 @@ void main(){
     fgets(key, 20, stdin);
 
     //Asking for which algorithm to use.
-    printf("Chose an algorithm: Caesar c, Vigenere v, Self-encryption s, PlayFair p:\n");
+    printf("Chose an algorithm: Caesar c, Vigenere v, Autokey a, PlayFair p, Transposition t:\n");
     fflush(stdin);
     scanf("%c", &choice);
 
@@ -42,11 +42,14 @@ void main(){
                 case 'c':
                     printf("%s", cipher_caesar(text, atoi(key)));
                     break;
-                case 's':
-                    printf("%s", cipher_self_encryption(text, key));
+                case 'a':
+                    printf("%s", cipher_autokey(text, key));
                     break;
                 case 'p':
                     printf("%s", cipher_playfair(text, key));
+                    break;
+                case 't':
+                    printf("%s", cipher_transposition(text, key));
                     break;
                 default:
                     printf("Algorithm doesn't exists\n");
@@ -61,11 +64,14 @@ void main(){
                 case 'c':
                     printf("%s", decipher_caesar(text, atoi(key)));
                     break;
-                case 's':
-                    printf("%s", decipher_self_encryption(text, key));
+                case 'a':
+                    printf("%s", decipher_autokey(text, key));
                     break;
                 case 'p':
                     printf("%s", decipher_playfair(text, key));
+                    break;
+                case 't':
+                    printf("%s", decipher_transposition(text, key));
                     break;
                 default:
                     printf("Algorithm doesn't exists\n");

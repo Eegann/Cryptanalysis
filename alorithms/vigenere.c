@@ -1,12 +1,7 @@
 //
 // Created by Alexandre Heintzmann on 13/02/2018.
 //
-//Vigenere algorithm:
-//Each letters of the key correspond to a shift to the right. a=0, b=1, c=2...
-//You change each letter in the text by the letter at their position+the shift, in the alphabet.
-//text=exemple, key=abc
-//e+0=e, x+1=y, e+2=g, m+0=m, p+1=q, l+2=n, e+0=e
-//=> eygmqne
+//Vigenere cipher: https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher
 
 #include <stdio.h>
 #include <string.h>

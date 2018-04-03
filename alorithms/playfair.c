@@ -1,7 +1,7 @@
 //
 // Created by Alexandre Heintzmann on 04/03/2018.
 //
-
+// Playfair cipher: https://en.wikipedia.org/wiki/Playfair_cipher
 
 #include <stdio.h>
 #include <string.h>

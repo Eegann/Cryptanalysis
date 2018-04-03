@@ -1,8 +1,7 @@
 //
 // Created by Alexandre Heintzmann on 13/02/2018.
 //
-//Caesar algorithm:
-//Each letters of the text are shifted to the right by the amount of the key.
+// Caesar cipher: https://en.wikipedia.org/wiki/Caesar_cipher
 
 #include <stdio.h>
 #include <string.h>
